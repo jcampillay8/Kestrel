@@ -121,7 +121,7 @@ const googleConnect = import.meta.env.VITE_APP_API_URL + 'api/auth/google-connec
     <form @submit.prevent="handleSubmit">
       <v-row>
         <v-col cols="12">
-          <h3>{{ $t('sign_in_to_my_app') }}</h3>
+          <h3>{{ $t('authentication.sign_in_to_my_app') }}</h3>
         </v-col>
       </v-row>
       <v-row>
@@ -129,7 +129,7 @@ const googleConnect = import.meta.env.VITE_APP_API_URL + 'api/auth/google-connec
           <div>
             <a :href="googleConnect" class="auth-main-form-continue-google-link">
               <img src="/google.png" />
-              {{ $t('continue_with_google') }}
+              {{ $t('authentication.continue_with_google') }}
             </a>
           </div>
           <div class="auth-main-form-separator" data-text="OR"></div>
@@ -141,7 +141,7 @@ const googleConnect = import.meta.env.VITE_APP_API_URL + 'api/auth/google-connec
             type="email"
             v-model="state.email"
             :error-messages="v$.email.$errors.map((e) => e.$message)"
-            :label="$t('email')"
+            :label="$t('authentication.email')"
             variant="outlined"
             autocomplete="new-email"
             @blur="v$.email.$touch"
@@ -156,7 +156,7 @@ const googleConnect = import.meta.env.VITE_APP_API_URL + 'api/auth/google-connec
             v-model="state.password"
             :counter="20"
             :error-messages="v$.password.$errors.map((e) => e.$message)"
-            :label="$t('password')"
+            :label="$t('authentication.password')"
             variant="outlined"
             autocomplete="new-password"
             @blur="v$.password.$touch"
@@ -166,11 +166,11 @@ const googleConnect = import.meta.env.VITE_APP_API_URL + 'api/auth/google-connec
       </v-row>
       <v-row class="mb-0">
         <v-col cols="6">
-          <v-checkbox v-model="state.rememberMe" :label="$t('remember_me')"></v-checkbox>
+          <v-checkbox v-model="state.rememberMe" :label="$t('authentication.remember_me')"></v-checkbox>
         </v-col>
         <v-col cols="6" class="text-right">
           <router-link to="/reset-password" class="auth-reset-password">
-            {{ $t('forgot_password') }}
+            {{ $t('authentication.forgot_password') }}
           </router-link>
         </v-col>
       </v-row>
@@ -182,7 +182,7 @@ const googleConnect = import.meta.env.VITE_APP_API_URL + 'api/auth/google-connec
             @click="v$.$validate"
             :class="{ 'auth-submitting-active-btn': isLoading }"
           >
-            {{ $t('sign_in') }}
+            {{ $t('authentication.sign_in') }}
             <span class="mdi mdi-arrow-right-bold auth-main-form-submit-icon"></span>
             <span class="mdi mdi-cached rotate-animation auth-main-form-submitting-icon"></span>
           </v-btn>
@@ -214,9 +214,9 @@ const googleConnect = import.meta.env.VITE_APP_API_URL + 'api/auth/google-connec
         <v-col cols="12">
           <div class="auth-additional-link">
             <p>
-              {{ $t('dont_have_an_account') }}
+              {{ $t('authentication.dont_have_an_account') }}
               <router-link to="/registration" class="inline-block auth-main-form-reset-link">
-                {{ $t('register_an_account') }}
+                {{ $t('authentication.register_an_account') }}
               </router-link>
             </p>
           </div>

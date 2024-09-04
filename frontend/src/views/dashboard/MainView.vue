@@ -25,13 +25,13 @@ const userStore = useUserStore();
 <template>
   <div class="user-data" v-if="userStore.userData">
     <div class="user-info">
-      <p>{{ $t('user_id') }}: {{ userStore.userData.id }}</p>
-      <p>{{ $t('email') }}: {{ userStore.userData.email }}</p>
+      <p>{{ $t('authentication.user_id') }}: {{ userStore.userData.id }}</p>
+      <p>{{ $t('authentication.email') }}: {{ userStore.userData.email }}</p>
     </div>
     <div class="user-actions">
       <p>
         <router-link to="/logout">
-          {{ $t('logout') }}
+          {{ $t('authentication.logout') }}
         </router-link>
       </p>
     </div>

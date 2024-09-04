@@ -1,11 +1,9 @@
-<!-- AuthLayout.vue -->
 <template>
     <v-app class="auth-layout">
       <WelcomeHeaderView />
-      <div class="content">
+      <!-- <div class="content">
         <router-view />
-      </div>
-      <!-- Reemplaza GOOD BYE con el contenido de WelcomeFooterView -->
+      </div> -->
       <WelcomeFooterView />
     </v-app>
   </template>
@@ -27,21 +25,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
+    height: 100%; /* Opcional: Asegura que ocupe toda la altura disponible */
     background-image: url('@/assets/img/kestrel.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-  }
-
-  /* Media query para ajustar la posición de la imagen en pantallas pequeñas */
-  @media (max-width: 768px) {
-    .content {
-      background-position: center right 30%; /* Desplaza la imagen hacia la derecha */
-    }
+    margin: 0; /* Elimina cualquier margen que pueda limitar el ancho */
+    padding: 0; /* Elimina cualquier padding interno */
   }
   
-  .footer {
-    margin-top: auto;
-    background-color: #242526;
+  @media (max-width: 768px) {
+    .content {
+      background-position: center right 30%; /* Ajusta la posición de la imagen en pantallas pequeñas */
+    }
   }
   </style>
+  

@@ -116,14 +116,14 @@ if ( socialStore.userData ) {
       <form @submit.prevent="handleSubmit" v-if="!props.failedMessage">
         <v-row>
           <v-col cols="12">
-            <h3>{{ $t('sign_up_to_my_app') }}</h3>
+            <h3>{{ $t('authentication.sign_up_to_my_app') }}</h3>
           </v-col>
         </v-row>
         <v-row>
           <v-col cols="12">
             <v-text-field
               v-model="state.email"
-              :label="$t('email')"
+              :label="$t('authentication.email')"
               variant="outlined"
               autocomplete="new-email"
               disabled
@@ -137,7 +137,7 @@ if ( socialStore.userData ) {
               v-model="state.password"
               :counter="20"
               :error-messages="v$.password.$errors.map((e) => e.$message)"
-              :label="$t('password')"
+              :label="$t('authentication.password')"
               variant="outlined"
               autocomplete="new-password"
               @blur="v$.password.$touch"
@@ -148,7 +148,7 @@ if ( socialStore.userData ) {
         <v-row>
           <v-col cols="12">
             <v-btn type="submit" class="auth-btn" @click="v$.$validate" :class="{'auth-submitting-active-btn': isLoading }">
-              {{ $t('sign_up') }}
+              {{ $t('authentication.sign_up') }}
               <span class="mdi mdi-arrow-right-bold auth-main-form-submit-icon"></span>
               <span class="mdi mdi-cached rotate-animation auth-main-form-submitting-icon"></span>
             </v-btn>
@@ -180,9 +180,9 @@ if ( socialStore.userData ) {
           <v-col cols="12">
             <div class="auth-additional-link">
               <p>
-                {{ $t('do_you_have_an_account') }}
+                {{ $t('authentication.do_you_have_an_account') }}
                 <router-link to="/" class="inline-block auth-main-form-reset-link">
-                  {{ $t('sign_in') }}
+                  {{ $t('authentication.sign_in') }}
                 </router-link>
               </p>
             </div>

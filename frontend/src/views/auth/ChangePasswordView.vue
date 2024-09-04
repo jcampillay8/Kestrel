@@ -117,7 +117,7 @@ onUnmounted(() => {
       <form @submit.prevent="handleSubmit">
         <v-row>
           <v-col cols="12">
-            <h3>{{ $t('create_new_password') }}</h3>
+            <h3>{{ $t('authentication.create_new_password') }}</h3>
           </v-col>
         </v-row>
         <v-row>
@@ -127,7 +127,7 @@ onUnmounted(() => {
               v-model="state.password"
               :counter="20"
               :error-messages="v$.password.$errors.map((e) => e.$message)"
-              :label="$t('new_password')"
+              :label="$t('authentication.new_password')"
               variant="outlined"
               autocomplete="new-password"
               @blur="v$.password.$touch"
@@ -142,7 +142,7 @@ onUnmounted(() => {
               v-model="state.repeat_password"
               :counter="20"
               :error-messages="v$.repeat_password.$errors.map((e) => e.$message)"
-              :label="$t('repeat_password')"
+              :label="$t('authentication.repeat_password')"
               variant="outlined"
               autocomplete="repeat-password"
               @blur="v$.repeat_password.$touch"
@@ -157,7 +157,7 @@ onUnmounted(() => {
                 class="auth-btn"
                 @click="v$.$validate"
                 :class="{'auth-submitting-active-btn': isLoading }">
-                {{ $t('save') }}
+                {{ $t('authentication.save') }}
                 <span class="mdi mdi-arrow-right-bold auth-main-form-submit-icon"></span>
                 <span class="mdi mdi-cached rotate-animation auth-main-form-submitting-icon"></span>
             </v-btn>
@@ -189,9 +189,9 @@ onUnmounted(() => {
           <v-col cols="12">
             <div class="auth-additional-link">
               <p>
-                {{ $t('do_you_remember_password') }}
+                {{ $t('authentication.do_you_remember_password') }}
                 <router-link to="/" class="inline-block auth-main-form-reset-link">
-                  {{ $t('sign_in') }}
+                  {{ $t('authentication.sign_in') }}
                 </router-link>
               </p>
             </div>

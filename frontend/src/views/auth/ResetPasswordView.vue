@@ -72,7 +72,7 @@ const handleSubmit = async () => {
       <form @submit.prevent="handleSubmit">
         <v-row>
           <v-col cols="12">
-            <h3>{{ $t('reset_password') }}</h3>
+            <h3>{{ $t('authentication.reset_password') }}</h3>
           </v-col>
         </v-row>
         <v-row>
@@ -81,7 +81,7 @@ const handleSubmit = async () => {
               type="email"
               v-model="state.email"
               :error-messages="v$.email.$errors.map((e) => e.$message)"
-              :label="$t('email')"
+              :label="$t('authentication.email')"
               variant="outlined"
               autocomplete="new-email"
               @blur="v$.email.$touch"
@@ -96,7 +96,7 @@ const handleSubmit = async () => {
                 class="auth-btn"
                 @click="v$.$validate"
                 :class="{'auth-submitting-active-btn': isLoading }">
-                {{ $t('reset') }}
+                {{ $t('authentication.reset') }}
                 <span class="mdi mdi-arrow-right-bold auth-main-form-submit-icon"></span>
                 <span class="mdi mdi-cached rotate-animation auth-main-form-submitting-icon"></span>
             </v-btn>
@@ -128,9 +128,9 @@ const handleSubmit = async () => {
           <v-col cols="12">
             <div class="auth-additional-link">
               <p>
-                {{ $t('do_you_remember_password') }}
+                {{ $t('authentication.do_you_remember_password') }}
                 <router-link to="/" class="inline-block auth-main-form-reset-link">
-                  {{ $t('sign_in') }}
+                  {{ $t('authentication.sign_in') }}
                 </router-link>
               </p>
             </div>
