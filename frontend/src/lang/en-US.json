@@ -1,5 +1,6 @@
 {
     "authentication": {
+      "Home": "Home",
       "sign_in_to_my_app": "Sign In to MyApp",
       "forgot_password": "Forgot Password?",
       "select_language": "Select Language",
@@ -78,7 +79,28 @@
       "Create_New_Skill_Description": "Build a new skill and track your learning progress.",
       "Create": "Create",
       "Recommended_Skills": "Recommended Skills",
-      "Recommended_Skills_Description": "Explore a list of skills that might interest you."
+      "Recommended_Skills_Description": "Explore a list of skills that might interest you.",
+      "Select_Language": "Select Language",
+      "Skill_Name": "Skill Name",
+      "Topic_Father": "Topic Father",
+      "Enter_multiple_topic_son": "Enter Multiple Topic Son",
+      "Use_commas_to_separate_values": "Use commas to separate values",
+      "Description": "Description",
+      "CEFR_Level" : "CEFR Level",
+      "Select_number_tokens" : "Select number tokens",
+      "Submit": "Submit",
+      "Continue": "Continue",
+      "Resubmit": "Resubmit",
+      "Setence": "Setence",
+      "errors": {
+        "fill_required_fields": "Please enter all required fields",
+        "misspelled_words": "Misspelled words: {words}",
+        "spell_check_failed": "Error checking spelling.",
+        "omit_spell_check_failed": "Error omitting spell checking."
+      },
+      "success": {
+        "sentences_generated": "Sentences generated successfully."
+      }
     },
   
     "skill_practice": {

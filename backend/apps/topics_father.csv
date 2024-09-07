@@ -1,0 +1,48 @@
+label,value,label_en,label_fr,label_de,label_pt
+Generico,1,Generic,Générique,Generisch,Genérico
+Transporte,2,Transport,Transport,Transport,Transporte
+Compras,3,Shopping,Achats,Einkaufen,Compras
+Trabajo,4,Work,Travail,Arbeit,Trabalho
+Educación,5,Education,Éducation,Bildung,Educação
+Socialización,6,Socialization,Socialisation,Sozialisierung,Socialização
+Eventos,7,Events,Événements,Veranstaltungen,Eventos
+Presentación y Exposición,8,Presentation and Exhibition,Présentation et Exposition,Präsentation und Ausstellung,Apresentação e Exposição
+Historia,9,History,Histoire,Geschichte,História
+Comida y Cocina,10,Food and Cooking,Nourriture et Cuisine,Essen und Kochen,Alimentos e Culinária
+Tecnología e Innovación,11,Technology and Innovation,Technologie et Innovation,Technologie und Innovation,Tecnologia e Inovação
+Lugares,12,Places,Lieux,Orte,Lugares
+Música y Arte,13,Music and Art,Musique et Art,Musik und Kunst,Música e Arte
+Familia y Amigos,14,Family and Friends,Famille et Amis,Familie und Freunde,Família e Amigos
+Deportes,15,Sports,Sports,Sport,Esportes
+Salud y Bienestar,16,Health and Wellness,Santé et Bien-être,Gesundheit und Wellness,Saúde e Bem-estar
+Naturaleza y Medio Ambiente,17,Nature and Environment,Nature et Environnement,Natur und Umwelt,Natureza e Meio Ambiente
+Viajes y Turismo,18,Travel and Tourism,Voyage et Tourisme,Reisen und Tourismus,Viagens e Turismo
+Literatura y Cine,19,Literature and Cinema,Littérature et Cinéma,Literatur und Kino,Literatura e Cinema
+Ciencia y Exploración,20,Science and Exploration,Science et Exploration,Wissenschaft und Erkundung,Ciência e Exploração
+Finanzas y Economía,21,Finance and Economy,Finance et Économie,Finanzen und Wirtschaft,Finanças e Economia
+Entrevista trabajo,22,Job Interview,Entretien d'embauche,Vorstellungsgespräch,Entrevista de Emprego
+Psicología y Autoayuda,23,Psychology and Self-help,Psychologie et Développement personnel,Psychologie und Selbsthilfe,Psicologia e Autoajuda
+Moda y Estilo,24,Fashion and Style,Mode et Style,Mode und Stil,Moda e Estilo
+Religión y Espiritualidad,25,Religion and Spirituality,Religion et Spiritualité,Religion und Spiritualität,Religião e Espiritualidade
+Política y Gobierno,26,Politics and Government,Politique et Gouvernement,Politik und Regierung,Política e Governo
+Derecho y Justicia,27,Law and Justice,Droit et Justice,Recht und Gerechtigkeit,Direito e Justiça
+Filosofía y Ética,28,Philosophy and Ethics,Philosophie et Éthique,Philosophie und Ethik,Filosofia e Ética
+Animales,29,Animals,Animaux,Tiere,Animais
+Emprendimiento,30,Entrepreneurship,Entrepreneuriat,Unternehmertum,Empreendedorismo
+Marketing y Publicidad,31,Marketing and Advertising,Marketing et Publicité,Marketing und Werbung,Marketing e Publicidade
+Sostenibilidad y Energía Renovable,32,Sustainability and Renewable Energy,Durabilité et Énergies renouvelables,Nachhaltigkeit und Erneuerbare Energien,Sustentabilidade e Energias Renováveis
+Fotografía y Video,33,Photography and Video,Photographie et Vidéo,Fotografie und Video,Fotografia e Vídeo
+Medios de Comunicación y Noticias,34,Media and News,Médias et Actualités,Medien und Nachrichten,Mídia e Notícias
+Cultura y Sociedad,35,Culture and Society,Culture et Société,Kultur und Gesellschaft,Cultura e Sociedade
+Idiomas y Lingüística,36,Languages and Linguistics,Langues et Linguistique,Sprachen und Linguistik,Idiomas e Linguística
+Gastronomía Internacional,37,International Gastronomy,Gastronomie internationale,Internationale Gastronomie,Gastronomia Internacional
+Arquitectura y Diseño,38,Architecture and Design,Architecture et Design,Architektur und Design,Arquitetura e Design
+Inteligencia Artificial y Machine Learning,39,Artificial Intelligence and Machine Learning,Intelligence Artificielle et Apprentissage Automatique,Künstliche Intelligenz und Maschinelles Lernen,Inteligência Artificial e Aprendizado de Máquina
+Robótica,40,Robotics,Robotique,Robotik,Robótica
+Ciberseguridad,41,Cybersecurity,Cybersécurité,Cybersicherheit,Cibersegurança
+Blockchain y Criptomonedas,42,Blockchain and Cryptocurrencies,Blockchain et Cryptomonnaies,Blockchain und Kryptowährungen,Blockchain e Criptomoedas
+Medicina y Biotecnología,43,Medicine and Biotechnology,Médecine et Biotechnologie,Medizin und Biotechnologie,Medicina e Biotecnologia
+Logística y Cadena de Suministro,44,Logistics and Supply Chain,Logistique et Chaîne d'approvisionnement,Logistik und Lieferkette,Logística e Cadeia de Suprimentos
+Desarrollo de Videojuegos,45,Video Game Development,Développement de Jeux Vidéo,Videospielentwicklung,Desenvolvimento de Jogos
+Derechos Humanos,46,Human Rights,Droits de l'Homme,Menschenrechte,Direitos Humanos
+Manejo de Recursos Naturales,47,Natural Resource Management,Gestion des Ressources Naturelles,Management von Natürlichen Ressourcen,Gestão de Recursos Naturais

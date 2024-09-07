@@ -22,6 +22,10 @@ import ProgressTrackingView from '../views/progress_tracking/ProgressTrackingHom
 import AboutView from '../views/about/AboutHomeView.vue';
 import ContactView from '../views/contact/ContactHomeView.vue';
 
+import Formulario01 from '../views/skill_builder/Formulario_01.vue';
+import Formulario02 from '../views/skill_builder/Formulario_02.vue';
+import Formulario03 from '../views/skill_builder/Formulario_03.vue';
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -54,6 +58,15 @@ const router = createRouter({
         { path: 'progress-tracking', component: ProgressTrackingView, meta: { requiresAuth: true } },
         { path: 'about', component: AboutView, meta: { requiresAuth: true } },
         { path: 'contact', component: ContactView, meta: { requiresAuth: true } }
+      ]
+    },
+    {
+      path: '/skill_builder',
+      component: HomeLayout,
+      children: [
+        { path: 'formulario_01', component: Formulario01, meta: { requiresAuth: true } }, 
+        { path: 'formulario_02', component: Formulario02, meta: { requiresAuth: true } }, 
+        { path: 'formulario_03', component: Formulario03, meta: { requiresAuth: true } }, 
       ]
     },
     {

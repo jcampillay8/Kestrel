@@ -107,3 +107,108 @@ Jaime Campillay
 ["1370e8","153fa9","327db4","132543","132b80","0c32e6","29a0ec","325985","152763","243c64"]
 
 
+
+Estimado,
+Es para mi un agrado, hacer llegar la carta oferta para el puesto de Ingeniero de Desarrollo Semi Senior.  
+
+Estaré atenta a tus consultas e intentaré resolverlas a la brevedad. Si estás de acuerdo con las condiciones, por favor, hazme llegar la carta firmada por este medio.
+
+Saludos. 
+
+
+
+Estimada Alejandra, 
+
+Muchas gracias por esta excelente noticia, con mucho gusto acepto la oferta realizada, en adjunto esta el documento firmado, si queda algo pendiente, por favor comentarmelo.
+
+Aprovecho de consultar sobre cuales serían los siguientes pasos a seguir y también saber si los días que tenga que ir a la oficina a trabajar, en este lugar cuenta con algún casino o cocina para calentar el almuerzo. 
+
+De nuevo muchas gracias por esta oportunidad dada, feliz de dar todo mi esfuerzo y ganas por sacar los proyectos y trabajos que me den.
+
+Saludos cordiales.
+
+Jaime Campillay.
+
+
+
+Hola Alejandra, buenos días.
+
+Muchas gracias por tu pronta respuesta, me queda muy claro los días que tengo ir a la oficina, la dirección de esta y también el dato sobre la cocina y locales cercanos para almorazar. En adjunto dejo los documentos solicitados. Quedo atengo por si queda algo pendiente para responderlo a la brevedad.
+
+Una última duda para confirmar, ¿los horarios de lunes a jueves serían de 08:30 a 18:30 y los viernes de 08:30 a 16:30 ?
+
+Desde ya manifesto toda mi gratitud y felicidad por esta gran oportunidad dada. Nos vemos el próximo martes 10!
+
+Saludos cordiales
+
+Jaime Campillay Rojas
+
+
+
+
+
+> tree -L 2 -I 'node_modules'
+.
+├── env.d.ts
+├── index.html
+├── package.json
+├── package-lock.json
+├── public
+│   ├── favicon.ico
+│   └── google.png
+├── README.md
+├── src
+│   ├── App.vue
+│   ├── assets
+│   ├── axios.ts
+│   ├── components
+│   ├── composables
+│   ├── interfaces
+│   ├── lang
+│   ├── layout
+│   ├── main.ts
+│   ├── plugins
+│   ├── router
+│   ├── stores
+│   ├── views
+│   └── vue.d.ts
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+├── tsconfig.vitest.json
+├── vite.config.ts
+└── vitest.config.ts
+
+
+> tree -L 2 -I 'env'
+.
+├── apps
+│   ├── authentication
+│   ├── skill_builder
+│   ├── topics_father.csv
+│   └── user
+├── core
+│   ├── asgi.py
+│   ├── exceptions.py
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── db.sqlite3
+├── manage.py
+└── test_email.py
+
+
+skill_builder
+├── admin.py
+├── apps.py
+├── __init__.py
+├── management
+├── migrations
+├── models.py
+├── __pycache__
+├── serializers.py
+├── tests.py
+├── urls.py
+└── views.py

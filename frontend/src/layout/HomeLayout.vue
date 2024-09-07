@@ -1,4 +1,3 @@
-<!-- src/layout/HomeLayout.vue -->
 <template>
   <v-app :theme="theme">
     <v-app-bar app dense color="#152763">
@@ -59,9 +58,9 @@
       <div class="language-selector d-none d-md-flex">
         <select
           id="language-select"
-          @change="changeLanguage($event)"
-          :value="currentLanguage"
-          class="white--text"
+          @change="changeLanguage"
+          v-model="currentLanguage"
+          :class="[theme === 'dark' ? 'dark-text' : 'light-text']"
         >
           <option value="en-US">English</option>
           <option value="es-LA">Español</option>
@@ -100,16 +99,17 @@
         <v-list-item @click="navigateTo('/dashboard/contact')">
           <v-list-item-title :class="{ 'selected-link': isActive('/dashboard/contact') }">{{ $t('menu_home.Contact') }}</v-list-item-title>
         </v-list-item>
+
+        <!-- Selector de idioma para pantallas pequeñas -->
         <v-list-item>
-          <v-select
-            :items="languages"
+          <select
             v-model="currentLanguage"
             @change="changeLanguage"
-            label="Language"
-            hide-details
-            dense
-            class="white--text"
-          ></v-select>
+            style="color: white !important;"
+          >
+            <option value="en-US">English</option>
+            <option value="es-LA">Español</option>
+          </select>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -180,7 +180,6 @@ function toggleTheme() {
 }
 
 .language-selector select {
-  color: white;
   background: transparent;
   border: none;
   font-size: 22px;
@@ -196,11 +195,40 @@ function toggleTheme() {
   background: #3a3b3c;
 }
 
+/* Clases dinámicas para cambiar color según el tema */
+.dark-text {
+  color: white;
+}
+
+.light-text {
+  color: black;
+}
+
 .home-content {
   padding-top: 16px;
 }
 
 .selected-link {
   color: #f66b37 !important;
+}
+
+/* Estilos adicionales para el fondo del menú desplegable */
+select {
+  background-color: inherit; /* Utiliza el color de fondo actual */
+}
+
+option {
+  background-color: white;
+  color: black;
+}
+
+.dark-text option {
+  background-color: black;
+  color: white;
+}
+
+.light-text option {
+  background-color: white;
+  color: black;
 }
 </style>

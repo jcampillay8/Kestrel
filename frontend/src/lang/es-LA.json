@@ -1,5 +1,6 @@
 {
-    "authentication": {
+  "authentication": {
+      "Home": "Inicio",
       "sign_in_to_my_app": "Iniciar sesión en MyApp",
       "forgot_password": "¿Olvidaste tu contraseña?",
       "select_language": "Seleccionar idioma",
@@ -36,56 +37,76 @@
       "change_password_page_description": "Crea una nueva contraseña para tu cuenta.",
       "dashboard": "Tablero",
       "dashboard_page_description": "Página de tu tablero."
-    },
+  },
   
-    "menu_home": {
+  "menu_home": {
       "Home": "Inicio",
       "Skill Practice": "Práctica de habilidades",
       "Skill Builder": "Constructor de habilidades",
       "Progress Tracking": "Seguimiento del progreso",
       "About": "Acerca de",
       "Contact": "Contacto"
-    },
-  
-    "about": {
+  },
+
+  "about": {
       "About_Home_View": "Acerca de nosotros",
       "About_Description": "Estamos dedicados a proporcionar la mejor experiencia de aprendizaje.",
       "About_Mission": "Nuestra misión es empoderar a los aprendices a través de habilidades prácticas.",
       "About_Vision": "Nuestra visión es crear una comunidad de aprendizaje permanente."
-    },
-  
-    "contact": {
+  },
+
+  "contact": {
       "Contact_Home_View": "Contáctanos",
       "name": "Tu nombre",
       "email": "Tu correo electrónico",
       "message": "Tu mensaje",
       "submit": "Enviar"
-    },
-  
-    "progress_tracking": {
+  },
+
+  "progress_tracking": {
       "Progress_Tracking_Home": "Seguimiento del progreso",
       "Progress_Description": "Sigue tu progreso y observa cuánto has mejorado con el tiempo.",
       "Recent_Progress": "Progreso reciente",
       "Recent_Progress_Description": "Aquí tienes un resumen de tus logros recientes.",
       "Overall_Progress": "Progreso general",
       "Overall_Progress_Description": "Monitorea tu desarrollo de habilidades y aprendizaje en general."
-    },
-  
-    "skill_builder": {
+  },
+
+  "skill_builder": {
       "Skill_Builder_Home": "Constructor de habilidades",
       "Skill_Builder_Description": "Desarrolla nuevas habilidades y mejora las existentes con nuestras herramientas.",
       "Create_New_Skill": "Crear nueva habilidad",
       "Create_New_Skill_Description": "Crea una nueva habilidad y sigue tu progreso de aprendizaje.",
       "Create": "Crear",
       "Recommended_Skills": "Habilidades recomendadas",
-      "Recommended_Skills_Description": "Explora una lista de habilidades que podrían interesarte."
-    },
-  
-    "skill_practice": {
+      "Recommended_Skills_Description": "Explora una lista de habilidades que podrían interesarte.",
+      "Select_Language": "Seleccionar Lenguage",
+      "Skill_Name": "Nombre Habilidad",
+      "Topic_Father": "Tópico Padre",
+      "Enter_multiple_topic_son": "Ingresa Múltiples Tópicos Hijos",
+      "Use_commas_to_separate_values": "Usa comas para separar los sub-topicos",
+      "Description": "Descripción",
+      "CEFR_Level" : "Nivel CEFR",
+      "Select_number_tokens" : "Seleccionar número de tokens",
+      "Submit": "Enviar",
+      "Continue": "Continuar",
+      "Resubmit": "Reenviar",
+      "Setence": "Oración",
+      "errors": {
+          "fill_required_fields": "Por favor, completa todos los campos obligatorios",
+          "misspelled_words": "Palabras mal escritas: {words}",
+          "spell_check_failed": "Error al verificar la ortografía.",
+          "omit_spell_check_failed": "Error al omitir la verificación ortográfica."
+      },
+      "success": {
+          "sentences_generated": "Oraciones generadas correctamente."
+      }
+  },
+
+  "skill_practice": {
       "Skill_Practice_Home": "Práctica de habilidades",
       "Skill_Practice_Description": "Practica y domina tus habilidades mediante ejercicios interactivos.",
       "Loading_Skills": "Cargando habilidades...",
       "No_Skills_Found": "No se encontraron habilidades. Intenta crear una nueva."
-    }
   }
-  
+}

@@ -32,7 +32,14 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['0.0.0.0','*','localhost', '127.0.0.1'])
+
+ALLOWED_HOSTS = [
+    ".railway.app"  # https://saas.prod.railway.app
+]
+
+if DEBUG:
+    ALLOWED_HOSTS += env.list('ALLOWED_HOSTS', default=['0.0.0.0', '*', 'localhost', '127.0.0.1'])
+
 
 
 # Application definition
@@ -55,7 +62,7 @@ THIRD_APPS = [
 
 PROJECT_APPS = [
     'apps.authentication',
-
+    'apps.skill_builder',
 ]
 
 INSTALLED_APPS = BASE_APPS + THIRD_APPS + PROJECT_APPS
@@ -149,6 +156,15 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://localhost:3000"
 ]
+
+CORS_ALLOW_METHODS = (
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+)
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': ['rest_framework.authentication.TokenAuthentication'],

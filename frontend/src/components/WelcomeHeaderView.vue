@@ -11,7 +11,7 @@
           :class="{ 'selected-link': isActive('/') }"
           @click="navigateTo('/')"
         >
-          {{ $t('home') }}
+          {{ $t('authentication.Home') }}
         </v-btn>
         <v-btn
           text
@@ -19,7 +19,7 @@
           :class="{ 'selected-link': isActive('/sign-in') }"
           @click="navigateTo('/')"
         >
-          {{ $t('sign_in') }}
+          {{ $t('authentication.sign_in') }}
         </v-btn>
         <v-btn
           text
@@ -27,7 +27,7 @@
           :class="{ 'selected-link': isActive('/registration') }"
           @click="navigateTo('/registration')"
         >
-          {{ $t('register_an_account') }}
+          {{ $t('authentication.register_an_account') }}
         </v-btn>
         <v-btn
           text
@@ -35,7 +35,7 @@
           :class="{ 'selected-link': isActive('/reset-password') }"
           @click="navigateTo('/reset-password')"
         >
-          {{ $t('forgot_password') }}
+          {{ $t('authentication.forgot_password') }}
         </v-btn>
   
         <!-- Selector de idioma -->
@@ -66,16 +66,16 @@
       <v-navigation-drawer v-model="drawer" app temporary absolute color="#0c32e6">
         <v-list>
           <v-list-item @click="navigateTo('/')">
-            <v-list-item-title :class="{ 'selected-link': isActive('/') }">{{ $t('home') }}</v-list-item-title>
+            <v-list-item-title :class="{ 'selected-link': isActive('/') }">{{ $t('authentication.home') }}</v-list-item-title>
           </v-list-item>
           <v-list-item @click="navigateTo('/sign-in')">
-            <v-list-item-title :class="{ 'selected-link': isActive('/sign-in') }">{{ $t('sign_in') }}</v-list-item-title>
+            <v-list-item-title :class="{ 'selected-link': isActive('/sign-in') }">{{ $t('authentication.sign_in') }}</v-list-item-title>
           </v-list-item>
           <v-list-item @click="navigateTo('/registration')">
-            <v-list-item-title :class="{ 'selected-link': isActive('/registration') }">{{ $t('register_an_account') }}</v-list-item-title>
+            <v-list-item-title :class="{ 'selected-link': isActive('/registration') }">{{ $t('authentication.register_an_account') }}</v-list-item-title>
           </v-list-item>
           <v-list-item @click="navigateTo('/reset-password')">
-            <v-list-item-title :class="{ 'selected-link': isActive('/reset-password') }">{{ $t('forgot_password') }}</v-list-item-title>
+            <v-list-item-title :class="{ 'selected-link': isActive('/reset-password') }">{{ $t('authentication.forgot_password') }}</v-list-item-title>
           </v-list-item>
           <v-list-item>
             <v-select
