@@ -1,8 +1,43 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 
-from django.db import models
-from django.contrib.auth.models import User
+User = get_user_model()
+
+class TableForm03(models.Model):
+    id_FK = models.ForeignKey(User, on_delete=models.CASCADE)
+    Title_Name = models.CharField(max_length=50)
+    Language = models.CharField(max_length=50)
+    Topic_Father = models.CharField(max_length=50)
+    Topic_Son = models.TextField()
+    Description = models.CharField(max_length=255)
+    Level_CEFR = models.CharField(max_length=2)
+    number_setence = models.IntegerField()
+    rating = models.FloatField(null=True, blank=True)
+    number_votes = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.Title_Name
+
+
+class SpanishSentence(models.Model):
+    id_FK = models.ForeignKey(TableForm03, on_delete=models.CASCADE, related_name='spanish_sentences')
+    rating_sentence = models.FloatField(null=True, blank=True)
+    number_votes_sentence = models.IntegerField(default=0)
+    Sentence = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.Sentence
+
+
+class EnglishSentence(models.Model):
+    id_FK = models.ForeignKey(TableForm03, on_delete=models.CASCADE, related_name='english_sentences')
+    rating_sentence = models.FloatField(null=True, blank=True)
+    number_votes_sentence = models.IntegerField(default=0)
+    Sentence = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.Sentence
+
 
 class TopicFather(models.Model):
     id = models.AutoField(primary_key=True)
@@ -18,7 +53,6 @@ class TopicFather(models.Model):
 
     def __str__(self):
         return self.topic_father
-
 
 
 class LanguageWord(models.Model):

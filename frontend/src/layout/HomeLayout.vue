@@ -1,10 +1,37 @@
 <template>
   <v-app :theme="theme">
-    <v-app-bar app dense color="#152763">
+    <!-- Barra superior: visible solo en pantallas grandes -->
+    <v-app-bar
+      v-if="isLargeScreen"
+      dense
+      flat
+      style="min-height: 32px; padding: 0; background-color: #152763;"
+    >
+      <v-col cols="auto">
+        <p class="white--text pa-2" style="font-size: 12px;">{{ $t('authentication.user_id') }}: {{ userStore.userData.id }}</p>
+      </v-col>
+      <v-col cols="auto">
+        <p class="white--text pa-2" style="font-size: 12px;">{{ $t('authentication.email') }}: {{ userStore.userData.email }}</p>
+      </v-col>
+      <v-spacer></v-spacer>
+      <v-col cols="auto">
+        <v-btn text class="white--text pa-2" style="font-size: 12px;" @click="navigateTo('/logout')">
+          {{ $t('authentication.logout') }}
+        </v-btn>
+      </v-col>
+    </v-app-bar>
+
+    <!-- Barra de navegación: ocupa todo el espacio cuando la barra superior no está -->
+    <v-app-bar
+      app
+      dense
+      color="#152763"
+      :class="{'v-app-bar-adjust': !isLargeScreen}"
+    >
       <v-toolbar-title class="white--text">Aurora Kestrel Language</v-toolbar-title>
       <v-spacer></v-spacer>
 
-      <!-- Botones en pantallas grandes -->
+      <!-- Botones de navegación en pantallas grandes -->
       <v-btn
         text
         class="d-none d-md-flex"
@@ -24,8 +51,8 @@
       <v-btn
         text
         class="d-none d-md-flex"
-        :class="{ 'selected-link': isActive('/dashboard/skill-builder') }"
-        @click="navigateTo('/dashboard/skill-builder')"
+        :class="{ 'selected-link': isSkillBuilderActive() }"
+        @click="navigateTo('/skill-builder')"
       >
         {{ $t('menu_home.Skill Builder') }}
       </v-btn>
@@ -72,23 +99,36 @@
         <v-icon>{{ theme === 'dark' ? 'mdi-weather-night' : 'mdi-weather-sunny' }}</v-icon>
       </v-btn>
 
-      <!-- Menú para pantallas pequeñas -->
+      <!-- Botón sandwich para pantallas pequeñas -->
       <v-btn icon @click="drawer = true" class="d-flex d-md-none white--text">
         <v-icon>mdi-menu</v-icon>
       </v-btn>
     </v-app-bar>
 
-    <!-- Menú lateral (sidebar) -->
+    <!-- Menú lateral (sidebar) que aparece en pantallas pequeñas -->
     <v-navigation-drawer v-model="drawer" app temporary absolute color="#0c32e6">
       <v-list>
+        <!-- Información del usuario en el menú de pantallas pequeñas -->
+        <v-list-item v-if="userStore.userData" class="user-info-small-screen">
+          <v-list-item-content>
+            <v-list-item-title class="white--text">{{ $t('authentication.user_id') }}: {{ userStore.userData.id }}</v-list-item-title>
+            <v-list-item-subtitle class="white--text">{{ $t('authentication.email') }}: {{ userStore.userData.email }}</v-list-item-subtitle>
+          </v-list-item-content>
+          <v-list-item-action>
+            <v-btn text class="white--text" @click="navigateTo('/logout')">
+              {{ $t('authentication.logout') }}
+            </v-btn>
+          </v-list-item-action>
+        </v-list-item>
+
         <v-list-item @click="navigateTo('/dashboard')">
           <v-list-item-title :class="{ 'selected-link': isActive('/dashboard') }">{{ $t('menu_home.Home') }}</v-list-item-title>
         </v-list-item>
         <v-list-item @click="navigateTo('/dashboard/skill-practice')">
           <v-list-item-title :class="{ 'selected-link': isActive('/dashboard/skill-practice') }">{{ $t('menu_home.Skill Practice') }}</v-list-item-title>
         </v-list-item>
-        <v-list-item @click="navigateTo('/dashboard/skill-builder')">
-          <v-list-item-title :class="{ 'selected-link': isActive('/dashboard/skill-builder') }">{{ $t('menu_home.Skill Builder') }}</v-list-item-title>
+        <v-list-item @click="navigateTo('/skill-builder')">
+          <v-list-item-title :class="{ 'selected-link': isSkillBuilderActive() }" @click="navigateTo('/skill-builder')">{{ $t('menu_home.Skill Builder') }}</v-list-item-title>
         </v-list-item>
         <v-list-item @click="navigateTo('/dashboard/progress-tracking')">
           <v-list-item-title :class="{ 'selected-link': isActive('/dashboard/progress-tracking') }">{{ $t('menu_home.Progress Tracking') }}</v-list-item-title>
@@ -129,10 +169,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watchEffect } from 'vue';
+import { useUserStore } from '@/stores/useUserStore';
+import { ref, watchEffect, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
 
+// Get the user store
+const userStore = useUserStore();
 const { locale } = useI18n();
 const router = useRouter();
 const drawer = ref(false);
@@ -159,9 +202,22 @@ function navigateTo(route: string) {
   router.push(route);
 }
 
+function isSkillBuilderActive() {
+  // Verifica si la ruta actual incluye "/dashboard/skill-builder"
+  return router.currentRoute.value.path.startsWith('/skill-builder');
+}
+
 function isActive(route: string) {
   return router.currentRoute.value.path === route;
 }
+
+// Detectar el tamaño de la pantalla
+const isLargeScreen = ref(window.innerWidth >= 960);
+
+// Actualizar el valor cuando cambia el tamaño de la pantalla
+window.addEventListener('resize', () => {
+  isLargeScreen.value = window.innerWidth >= 960;
+});
 
 function toggleTheme() {
   theme.value = theme.value === 'dark' ? 'light' : 'dark';
@@ -212,23 +268,9 @@ function toggleTheme() {
   color: #f66b37 !important;
 }
 
-/* Estilos adicionales para el fondo del menú desplegable */
-select {
-  background-color: inherit; /* Utiliza el color de fondo actual */
-}
-
-option {
-  background-color: white;
-  color: black;
-}
-
-.dark-text option {
-  background-color: black;
-  color: white;
-}
-
-.light-text option {
-  background-color: white;
-  color: black;
+/* Ajuste de la barra inferior cuando la superior desaparece */
+.v-app-bar-adjust {
+  /* margin-top: -32px; Mueve hacia arriba para ocupar el espacio de la barra superior */
+  transition: margin-top 0.3s ease;
 }
 </style>

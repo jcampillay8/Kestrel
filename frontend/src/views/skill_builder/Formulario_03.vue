@@ -19,7 +19,7 @@
         ></v-select>
 
         <!-- Campo de texto para el nombre de la habilidad -->
-        <v-text-field :label="$t('skill_builder.Skill_Name')" v-model="skillName"></v-text-field>
+        <v-text-field :label="$t('skill_builder.Title_Name')" v-model="skillName"></v-text-field>
 
         <!-- Segundo dropdown (Topic Father) -->
         <v-select
@@ -113,6 +113,9 @@
           </tr>
         </tbody>
       </v-table>
+
+      <!-- Botón para guardar las oraciones -->
+      <v-btn color="primary" @click="saveSentences">{{ $t('skill_builder.Save_Sentences') }}</v-btn>
     </v-col>
 
     <!-- Columna vacía a la derecha -->
@@ -123,71 +126,48 @@
 <script>
 import axios from 'axios';
 import { ref, onMounted, watch } from 'vue';
-import { useI18n } from 'vue-i18n';  // Importar la función de i18n
+import { useI18n } from 'vue-i18n';
 
 export default {
   setup() {
-    // Iniciar el uso de i18n
     const { t, locale } = useI18n();
 
-    // Declaraciones de variables reactivas dentro de setup
     const skillName = ref('');
     const skillDescription = ref('');
     const selectedCEFRLevel = ref(null);
     const selectedTopicFather = ref(null);
-    const cefr_levels = ref([]);  // Para los CEFR Levels
-    const topicFathers = ref([]); // Para los Topic Fathers
-
-    // Declaraciones adicionales para el resto del formulario
+    const cefr_levels = ref([]);
+    const topicFathers = ref([]);
     const selectedLanguage = ref('');
     const multipleValues = ref('');
-    const selectedNumTokens = ref(100); // Valor preseleccionado por defecto
-    const languages = ref([
-      'English',
-      'Spanish',
-      'French',
-      'Japanese',
-      'German',
-      'Chinese',
-    ]);
-    const tokens = ref([100, 250, 500, 750, 1000]); // Lista de tokens disponibles
+    const selectedNumTokens = ref(100);
+    const languages = ref(['English', 'Spanish', 'French', 'Japanese', 'German', 'Chinese']);
+    const tokens = ref([100, 250, 500, 750, 1000]);
     const alertMessage = ref('');
     const alertType = ref('error');
-    const generatedSentences = ref([]); // Almacena las oraciones generadas
-    const showContinueButton = ref(false); // Controla la visibilidad del botón de continuar
+    const generatedSentences = ref([]);
+    const showContinueButton = ref(false);
 
-    // Función para cargar los Topic Fathers según el idioma seleccionado
     const loadTopicFathers = () => {
-  // Obtén solo el código de idioma (ej. 'en' en lugar de 'en-US')
-  const languageCode = locale.value.split('-')[0]; 
-  console.log('Language being sent to backend:', languageCode);  // Verifica el valor de idioma
-  axios
-    .get('http://localhost:8000/skill_builder/topics/', {
-      params: {
-        language: languageCode  // Enviar el idioma al backend
-      }
-    })
-    .then((response) => {
-      console.log('Response data from backend:', response.data);  // Verifica la estructura de la respuesta
-      topicFathers.value = response.data.map((topic) => Object.values(topic)[0]); // Ajustar al idioma seleccionado
-    })
-    .catch((error) => {
-      console.error('Error loading topic fathers:', error);
-    });
-};
+      const languageCode = locale.value.split('-')[0];
+      axios
+        .get('http://localhost:8000/skill_builder/topics/', { params: { language: languageCode } })
+        .then(response => {
+          topicFathers.value = response.data.map(topic => Object.values(topic)[0]);
+        })
+        .catch(error => console.error('Error loading topic fathers:', error));
+    };
 
-    // Cargar datos cuando el componente esté montado
     onMounted(() => {
       cefr_levels.value = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2'];
-      loadTopicFathers(); // Cargar los topic fathers iniciales
+      loadTopicFathers();
     });
 
-    // Escuchar cambios en el idioma y recargar los Topic Fathers
     watch(locale, loadTopicFathers);
 
     const submitForm = async () => {
       if (!selectedLanguage.value || !multipleValues.value || !selectedNumTokens.value) {
-        alertMessage.value = t('skill_builder.errors.fill_required_fields');  // Mensaje traducido
+        alertMessage.value = t('skill_builder.errors.fill_required_fields');
         alertType.value = 'error';
         return;
       }
@@ -206,12 +186,13 @@ export default {
         params.append('cefr_level', selectedCEFRLevel.value);
 
         const response = await axios.get('http://localhost:8000/skill_builder/check_spelling/', {
-          params: params
+          params: params,
         });
 
-        alertMessage.value = response.data.status === 'error'
-          ? t('skill_builder.errors.misspelled_words', { words: response.data.message })
-          : t('success.sentences_generated');  // Mensajes traducidos
+        alertMessage.value =
+          response.data.status === 'error'
+            ? t('skill_builder.errors.misspelled_words', { words: response.data.message })
+            : t('success.sentences_generated');
         alertType.value = response.data.status === 'error' ? 'warning' : 'success';
 
         if (response.data.status === 'success') {
@@ -221,7 +202,7 @@ export default {
         showContinueButton.value = true;
       } catch (error) {
         console.error('Error checking spelling:', error);
-        alertMessage.value = t('skill_builder.errors.spell_check_failed');  // Mensaje traducido
+        alertMessage.value = t('skill_builder.errors.spell_check_failed');
         alertType.value = 'error';
       }
     };
@@ -230,9 +211,12 @@ export default {
       try {
         const params = new URLSearchParams();
         params.append('language', selectedLanguage.value);
-        multipleValues.value.split(',').map(word => word.trim()).forEach(word => {
-          params.append('words[]', word);
-        });
+        multipleValues.value
+          .split(',')
+          .map(word => word.trim())
+          .forEach(word => {
+            params.append('words[]', word);
+          });
         params.append('num_tokens', selectedNumTokens.value);
         params.append('topic_father', selectedTopicFather.value);
         params.append('description', skillDescription.value);
@@ -240,23 +224,49 @@ export default {
         params.append('skip_spell_check', 'true');
 
         const response = await axios.get('http://localhost:8000/skill_builder/check_spelling/', {
-          params: params
+          params: params,
         });
 
-        alertMessage.value = t('skill_builder.success.sentences_generated');  // Mensaje traducido
+        alertMessage.value = t('skill_builder.success.sentences_generated');
         alertType.value = 'success';
         generatedSentences.value = response.data.sentences;
       } catch (error) {
         console.error('Error omitting spell checking:', error);
-        alertMessage.value = t('skill_builder.errors.omit_spell_check_failed');  // Mensaje traducido
+        alertMessage.value = t('skill_builder.errors.omit_spell_check_failed');
         alertType.value = 'error';
       }
     };
 
-    const saveSentence = (index) => {
-      console.log(`Sentence at index ${index} saved:`, generatedSentences.value[index]);
-    };
-    
+    const saveSentences = () => {
+  const payload = {
+    Title_Name: skillName.value,
+    Language: selectedLanguage.value,
+    Topic_Father: selectedTopicFather.value,
+    Topic_Son: multipleValues.value,
+    Description: skillDescription.value,
+    Level_CEFR: selectedCEFRLevel.value,
+    number_setence: generatedSentences.value.length,
+    spanish_sentences: generatedSentences.value.map(sentence => ({ Sentence: sentence })),
+    english_sentences: generatedSentences.value.map(sentence => ({ Sentence: sentence })),
+  };
+
+  // Imprime el payload para depurar
+  console.log("Payload enviado:", payload);
+
+  axios
+    .post('http://localhost:8000/skill_builder/save_sentences/', payload)
+    .then(response => {
+      alertMessage.value = 'Sentences saved successfully!';
+      alertType.value = 'success';
+    })
+    .catch(error => {
+      console.error('Error saving sentences:', error);
+      alertMessage.value = 'Error saving sentences. Please try again.';
+      alertType.value = 'error';
+    });
+};
+
+
     return {
       skillName,
       skillDescription,
@@ -273,15 +283,13 @@ export default {
       alertMessage,
       alertType,
       generatedSentences,
-      saveSentence,
+      saveSentences,
       showContinueButton,
-      continueAction
+      continueAction,
     };
   },
 };
 </script>
-
-
 
 <style scoped>
 .wrapped-text {

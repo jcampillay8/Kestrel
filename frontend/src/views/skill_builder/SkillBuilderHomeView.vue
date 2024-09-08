@@ -16,7 +16,7 @@
         </v-card-text>
         <v-card-text>
           <p>{{ $t('skill_builder.Create_New_Skill_Description') }}</p>
-          <v-btn color="primary" :to="{ path: '/skill_builder/Formulario_01' }">
+          <v-btn color="primary" :to="{ path: '/skill-builder/Formulario_01' }">
             {{ $t('skill_builder.Create') }}
           </v-btn>
         </v-card-text>
@@ -31,7 +31,7 @@
         </v-card-text>
         <v-card-text>
           <p>{{ $t('skill_builder.Create_New_Skill_Description') }}</p>
-          <v-btn color="primary" :to="{ path: '/skill_builder/Formulario_02' }">
+          <v-btn color="primary" :to="{ path: '/skill-builder/Formulario_02' }">
             {{ $t('skill_builder.Create') }}</v-btn>
         </v-card-text>
       </v-card>
@@ -46,7 +46,7 @@
         </v-card-text>
         <v-card-text>
           <p>{{ $t('skill_builder.Recommended_Skills_Description') }}</p>
-          <v-btn color="primary" :to="{ path: '/skill_builder/Formulario_03' }">
+          <v-btn color="primary" :to="{ path: '/skill-builder/Formulario_03' }">
           {{ $t('skill_builder.Create') }}</v-btn>
         </v-card-text>
       </v-card>

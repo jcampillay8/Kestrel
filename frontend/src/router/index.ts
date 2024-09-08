@@ -53,17 +53,17 @@ const router = createRouter({
       component: HomeLayout,
       children: [
         { path: '', component: MainView, meta: { requiresAuth: true } },
-        { path: 'skill-practice', component: SkillPracticeHomeView, meta: { requiresAuth: true } },
-        { path: 'skill-builder', component: SkillBuilderView, meta: { requiresAuth: true } },
+        { path: 'skill-practice', component: SkillPracticeHomeView, meta: { requiresAuth: true } }, 
         { path: 'progress-tracking', component: ProgressTrackingView, meta: { requiresAuth: true } },
         { path: 'about', component: AboutView, meta: { requiresAuth: true } },
         { path: 'contact', component: ContactView, meta: { requiresAuth: true } }
       ]
     },
     {
-      path: '/skill_builder',
+      path: '/skill-builder',
       component: HomeLayout,
       children: [
+        { path: '', component: SkillBuilderView, meta: { requiresAuth: true } },
         { path: 'formulario_01', component: Formulario01, meta: { requiresAuth: true } }, 
         { path: 'formulario_02', component: Formulario02, meta: { requiresAuth: true } }, 
         { path: 'formulario_03', component: Formulario03, meta: { requiresAuth: true } }, 

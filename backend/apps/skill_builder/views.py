@@ -1,6 +1,6 @@
 from rest_framework import generics
-from .models import TopicFather
-from .serializers import TopicFatherSerializer
+from .models import TopicFather, TableForm03, SpanishSentence, EnglishSentence
+from .serializers import TopicFatherSerializer, TableForm03Serializer
 from django.http import JsonResponse
 from spellchecker import SpellChecker
 from rest_framework.decorators import api_view
@@ -8,12 +8,69 @@ from openai import OpenAI
 import os
 import environ
 from rest_framework.response import Response
+from rest_framework import status
+from rest_framework.views import APIView
+from django.contrib.auth import get_user_model
+User = get_user_model()  # Esto asegurará que obtienes el modelo de usuario correcto
+
 
 # Configura tu cliente OpenAI
 client = OpenAI(
     # This is the default and can be omitted
     api_key=os.environ.get("OPENAI_API_KEY"),
 )
+
+class CreateTableForm03View(APIView):
+    def post(self, request, *args, **kwargs):
+        serializer = TableForm03Serializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(id_FK=request.user)  # Asigna el usuario actual al id_FK
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+# Nueva vista para guardar las oraciones
+@api_view(['POST'])
+def save_sentences(request):
+    try:
+        data = request.data
+        
+        # Utiliza un usuario predeterminado si no se pasa el usuario autenticado
+        user = request.user if request.user.is_authenticated else User.objects.get(id=1)
+
+        table_form_03_data = {
+            'id_FK': user,  # Usuario predeterminado o autenticado
+            'Title_Name': data.get('Title_Name'),
+            'Language': data.get('Language'),
+            'Topic_Father': data.get('Topic_Father'),
+            'Topic_Son': data.get('Topic_Son'),
+            'Description': data.get('Description'),
+            'Level_CEFR': data.get('Level_CEFR'),
+            'number_setence': len(data.get('spanish_sentences', []))
+        }
+
+        # Guardar en TableForm03
+        table_form_03 = TableForm03.objects.create(**table_form_03_data)
+
+        # Guardar oraciones en español
+        for sentence in data.get('spanish_sentences', []):
+            SpanishSentence.objects.create(
+                id_FK=table_form_03,
+                Sentence=sentence.get('Sentence')
+            )
+
+        # Guardar oraciones en inglés
+        for sentence in data.get('english_sentences', []):
+            EnglishSentence.objects.create(
+                id_FK=table_form_03,
+                Sentence=sentence.get('Sentence')
+            )
+
+        return Response({"message": "Sentences saved successfully."}, status=status.HTTP_201_CREATED)
+
+    except Exception as e:
+        return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+
+
 
 @api_view(['GET'])
 def check_spelling(request):
