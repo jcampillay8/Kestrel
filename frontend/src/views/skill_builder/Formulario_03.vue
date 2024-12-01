@@ -67,11 +67,13 @@
           {{ alertMessage }}
         </v-alert>
 
-        <!-- Botón de envío, desaparece si aparece el botón de continuar -->
-        <v-btn v-if="!showContinueButton" color="primary" @click="submitForm">{{ $t('skill_builder.Submit') }}</v-btn>
+        <!-- Botón de envío, desaparece si aparece la tabla -->
+        <v-btn v-if="!generatedSentences.length" color="primary" @click="submitForm">
+          {{ $t('skill_builder.Submit') }}
+        </v-btn>
 
-        <!-- Botón de continuar y resubmit, visibles cuando aparece el botón de continuar -->
-        <v-row v-if="showContinueButton" class="mt-4">
+        <!-- Botón de continuar y resubmit, desaparecen cuando se generan las oraciones -->
+        <v-row v-if="showContinueButton && !generatedSentences.length" class="mt-4">
           <v-col>
             <v-btn color="success" @click="continueAction">{{ $t('skill_builder.Continue') }}</v-btn>
           </v-col>
@@ -79,43 +81,45 @@
             <v-btn color="warning" @click="submitForm">{{ $t('skill_builder.Resubmit') }}</v-btn>
           </v-col>
         </v-row>
+
+        <!-- Tabla editable con las oraciones generadas -->
+        <v-table v-if="generatedSentences.length > 0" class="mt-4">
+          <thead>
+            <tr>
+              <th>{{ $t('skill_builder.Setence') }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(sentence, index) in generatedSentences" :key="index">
+              <td>
+                <v-confirm-edit v-model="generatedSentences[index]">
+                  <template v-slot:default="{ model: proxyModel, actions }">
+                    <v-card class="mx-auto" max-width="1600">
+                      <template v-slot:text>
+                        <v-text-field
+                          v-model="proxyModel.value"
+                          label="Modify my value"
+                          class="wrapped-text"
+                        ></v-text-field>
+                      </template>
+
+                      <template v-slot:actions>
+                        <v-spacer></v-spacer>
+                        <component :is="actions"></component>
+                      </template>
+                    </v-card>
+                  </template>
+                </v-confirm-edit>
+              </td>
+            </tr>
+          </tbody>
+        </v-table>
+
+        <!-- Botón para guardar las oraciones, aparece junto con la tabla -->
+        <v-btn v-if="generatedSentences.length > 0" color="primary" @click="saveSentences">
+          {{ $t('skill_builder.Save_Sentences') }}
+        </v-btn>
       </v-form>
-
-      <!-- Tabla editable con las oraciones generadas -->
-      <v-table v-if="generatedSentences.length > 0" class="mt-4">
-        <thead>
-          <tr>
-            <th>{{ $t('skill_builder.Setence') }}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="(sentence, index) in generatedSentences" :key="index">
-            <td>
-              <v-confirm-edit v-model="generatedSentences[index]">
-                <template v-slot:default="{ model: proxyModel, actions }">
-                  <v-card class="mx-auto" max-width="1600">
-                    <template v-slot:text>
-                      <v-text-field
-                        v-model="proxyModel.value"
-                        label="Modify my value"
-                        class="wrapped-text"
-                      ></v-text-field>
-                    </template>
-
-                    <template v-slot:actions>
-                      <v-spacer></v-spacer>
-                      <component :is="actions"></component>
-                    </template>
-                  </v-card>
-                </template>
-              </v-confirm-edit>
-            </td>
-          </tr>
-        </tbody>
-      </v-table>
-
-      <!-- Botón para guardar las oraciones -->
-      <v-btn color="primary" @click="saveSentences">{{ $t('skill_builder.Save_Sentences') }}</v-btn>
     </v-col>
 
     <!-- Columna vacía a la derecha -->
@@ -238,33 +242,33 @@ export default {
     };
 
     const saveSentences = () => {
-  const payload = {
-    Title_Name: skillName.value,
-    Language: selectedLanguage.value,
-    Topic_Father: selectedTopicFather.value,
-    Topic_Son: multipleValues.value,
-    Description: skillDescription.value,
-    Level_CEFR: selectedCEFRLevel.value,
-    number_setence: generatedSentences.value.length,
-    spanish_sentences: generatedSentences.value.map(sentence => ({ Sentence: sentence })),
-    english_sentences: generatedSentences.value.map(sentence => ({ Sentence: sentence })),
-  };
+      const payload = {
+        Title_Name: skillName.value,
+        Language: selectedLanguage.value,
+        Topic_Father: selectedTopicFather.value,
+        Topic_Son: multipleValues.value,
+        Description: skillDescription.value,
+        Level_CEFR: selectedCEFRLevel.value,
+        number_setence: generatedSentences.value.length,
+        spanish_sentences: generatedSentences.value.map(sentence => ({ Sentence: sentence })),
+        english_sentences: generatedSentences.value.map(sentence => ({ Sentence: sentence })),
+      };
 
-  // Imprime el payload para depurar
-  console.log("Payload enviado:", payload);
+      // Imprime el payload para depurar
+      console.log("Payload enviado:", payload);
 
-  axios
-    .post('http://localhost:8000/skill_builder/save_sentences/', payload)
-    .then(response => {
-      alertMessage.value = 'Sentences saved successfully!';
-      alertType.value = 'success';
-    })
-    .catch(error => {
-      console.error('Error saving sentences:', error);
-      alertMessage.value = 'Error saving sentences. Please try again.';
-      alertType.value = 'error';
-    });
-};
+      axios
+        .post('http://localhost:8000/skill_builder/save_sentences/', payload)
+        .then(response => {
+          alertMessage.value = 'Sentences saved successfully!';
+          alertType.value = 'success';
+        })
+        .catch(error => {
+          console.error('Error saving sentences:', error);
+          alertMessage.value = 'Error saving sentences. Please try again.';
+          alertType.value = 'error';
+        });
+    };
 
 
     return {

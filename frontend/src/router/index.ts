@@ -26,6 +26,12 @@ import Formulario01 from '../views/skill_builder/Formulario_01.vue';
 import Formulario02 from '../views/skill_builder/Formulario_02.vue';
 import Formulario03 from '../views/skill_builder/Formulario_03.vue';
 
+import Skill_Practice01 from '../views/skill_practice/Skill_Practice_01.vue';
+import Skill_Practice02 from '../views/skill_practice/Skill_Practice_02.vue';
+import Skill_Practice03 from '../views/skill_practice/Skill_Practice_03.vue';
+import Skill_Practice04 from '../views/skill_practice/Skill_Practice_04.vue';
+
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -53,7 +59,6 @@ const router = createRouter({
       component: HomeLayout,
       children: [
         { path: '', component: MainView, meta: { requiresAuth: true } },
-        { path: 'skill-practice', component: SkillPracticeHomeView, meta: { requiresAuth: true } }, 
         { path: 'progress-tracking', component: ProgressTrackingView, meta: { requiresAuth: true } },
         { path: 'about', component: AboutView, meta: { requiresAuth: true } },
         { path: 'contact', component: ContactView, meta: { requiresAuth: true } }
@@ -69,6 +74,24 @@ const router = createRouter({
         { path: 'formulario_03', component: Formulario03, meta: { requiresAuth: true } }, 
       ]
     },
+    {
+      path: '/skill-practice',
+      component: HomeLayout,
+      children: [
+        { path: '', component: SkillPracticeHomeView, meta: { requiresAuth: true } }, 
+        { path: 'skill_practice_01', component: Skill_Practice01, meta: { requiresAuth: true } }, 
+        { path: 'skill_practice_02', component: Skill_Practice02, meta: { requiresAuth: true } }, 
+        { path: 'skill_practice_03', component: Skill_Practice03, meta: { requiresAuth: true } }, 
+        { path: 'skill_practice_04', component: Skill_Practice04, meta: { requiresAuth: true } }, 
+        {
+          path: 'practice/:id', 
+          name: 'Practice', 
+          component: () => import('@/views/skill_practice/TitleDetail.vue'), 
+          meta: { requiresAuth: true }
+        }
+      ]
+    },
+    
     {
       path: '/logout',
       component: { template: '<div></div>' },

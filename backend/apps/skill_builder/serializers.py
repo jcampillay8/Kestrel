@@ -1,5 +1,13 @@
 from rest_framework import serializers
-from .models import TableForm03, TopicFather, SpanishSentence, EnglishSentence
+from .models import TableForm03, TopicFather, SpanishSentence, EnglishSentence, TablaMaestra
+
+
+class TablaMaestraSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TablaMaestra
+        fields = ['id', 'verb_tense', 'grammatical_category',
+                  'related_subtopic', 'order']
+
 
 class TopicFatherSerializer(serializers.ModelSerializer):
     class Meta:
@@ -10,13 +18,15 @@ class TopicFatherSerializer(serializers.ModelSerializer):
 class SpanishSentenceSerializer(serializers.ModelSerializer):
     class Meta:
         model = SpanishSentence
-        fields = ['id', 'id_FK', 'rating_sentence', 'number_votes_sentence', 'Sentence']
+        fields = ['id', 'id_FK', 'rating_sentence',
+                  'number_votes_sentence', 'Sentence']
 
 
 class EnglishSentenceSerializer(serializers.ModelSerializer):
     class Meta:
         model = EnglishSentence
-        fields = ['id', 'id_FK', 'rating_sentence', 'number_votes_sentence', 'Sentence']
+        fields = ['id', 'id_FK', 'rating_sentence',
+                  'number_votes_sentence', 'Sentence']
 
 
 class TableForm03Serializer(serializers.ModelSerializer):
@@ -37,9 +47,11 @@ class TableForm03Serializer(serializers.ModelSerializer):
         table_form_03 = TableForm03.objects.create(**validated_data)
 
         for spanish_sentence_data in spanish_sentences_data:
-            SpanishSentence.objects.create(id_FK=table_form_03, **spanish_sentence_data)
+            SpanishSentence.objects.create(
+                id_FK=table_form_03, **spanish_sentence_data)
 
         for english_sentence_data in english_sentences_data:
-            EnglishSentence.objects.create(id_FK=table_form_03, **english_sentence_data)
+            EnglishSentence.objects.create(
+                id_FK=table_form_03, **english_sentence_data)
 
         return table_form_03

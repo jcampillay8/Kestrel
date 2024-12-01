@@ -56,7 +56,7 @@ const handleSubmit = async () => {
   }
 
   // Request the password reset
-  const passwordReset = authRequest('api/auth/password-reset', state);
+  const passwordReset = authRequest('api/auth/password-reset/', state);
   
   // Process the promise response
   passwordReset.catch(error => {

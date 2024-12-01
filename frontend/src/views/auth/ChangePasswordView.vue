@@ -82,7 +82,7 @@ const handleSubmit = async () => {
   const token = router.currentRoute.value.params.token;
 
   // Change the password
-  const signIn = updateRequest('api/auth/change-password', {
+  const signIn = updateRequest('api/auth/change-password/', {
     token: token,
     password: state.password
   });

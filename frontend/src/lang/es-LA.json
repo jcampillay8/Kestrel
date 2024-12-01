@@ -92,6 +92,7 @@
       "Continue": "Continuar",
       "Resubmit": "Reenviar",
       "Setence": "Oración",
+      "Save_Sentences": "Guardar Sentencias",
       "errors": {
           "fill_required_fields": "Por favor, completa todos los campos obligatorios",
           "misspelled_words": "Palabras mal escritas: {words}",
@@ -104,9 +105,12 @@
   },
 
   "skill_practice": {
-      "Skill_Practice_Home": "Práctica de habilidades",
-      "Skill_Practice_Description": "Practica y domina tus habilidades mediante ejercicios interactivos.",
-      "Loading_Skills": "Cargando habilidades...",
-      "No_Skills_Found": "No se encontraron habilidades. Intenta crear una nueva."
+    "Skill_Practice_Home": "Inicio de Práctica de Habilidades",
+    "Skill_Practice_Description": "Practica y perfecciona tus habilidades a través de ejercicios interactivos.",
+    "Skill_Practice_01": "Práctica de Habilidad 01",
+    "Skill_Practice_02": "Práctica de Habilidad 02",
+    "Skill_Practice_03": "Práctica de Habilidad 03",
+    "Go_Practice": "Ir a Practicar"
   }
+  
 }

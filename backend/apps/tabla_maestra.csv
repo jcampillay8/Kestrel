@@ -1,0 +1,220 @@
+ID,Tiempo Verbal,Categorías Gramaticales,Submateria Relacionada,Orden
+1,Presente Simple,Voz Activa y Pasiva,Active Voice,1
+2,Presente Simple,Voz Activa y Pasiva,Passive Voice,2
+3,Presente Simple,Modales y Verbos,Modal Verbs,3
+4,Presente Simple,Modales y Verbos,Verb Patterns,4
+5,Presente Simple,Modales y Verbos,Phrasal Verbs,5
+6,Presente Simple,Expresiones de Tiempo,Time Expressions,6
+7,Presente Simple,Comparativos y Superlativos,Comparatives and Superlatives,7
+8,Presente Continuo,Voz Activa y Pasiva,Active Voice,8
+9,Presente Continuo,Voz Activa y Pasiva,Passive Voice,9
+10,Presente Continuo,Expresiones de Tiempo,Time Expressions,10
+11,Presente Perfecto,Voz Activa y Pasiva,Active Voice,11
+12,Presente Perfecto,Voz Activa y Pasiva,Passive Voice,12
+13,Presente Perfecto,Expresiones de Tiempo,Time Expressions,13
+14,Presente Perfecto Continuo,Expresiones de Tiempo,Time Expressions,14
+15,Pasado Simple,Voz Activa y Pasiva,Active Voice,15
+16,Pasado Simple,Voz Activa y Pasiva,Passive Voice,16
+17,Pasado Simple,Expresiones de Tiempo,Time Expressions,17
+18,Pasado Continuo,Voz Activa y Pasiva,Active Voice,18
+19,Pasado Continuo,Voz Activa y Pasiva,Passive Voice,19
+20,Pasado Continuo,Expresiones de Tiempo,Time Expressions,20
+21,Pasado Perfecto,Voz Activa y Pasiva,Active Voice,21
+22,Pasado Perfecto,Voz Activa y Pasiva,Passive Voice,22
+23,Pasado Perfecto,Modales y Verbos,Modal Verbs,23
+24,Pasado Perfecto,Modales y Verbos,Verb Patterns,24
+25,Pasado Perfecto,Modales y Verbos,Phrasal Verbs,25
+26,Pasado Perfecto,Expresiones de Tiempo,Time Expressions,26
+27,Pasado Perfecto Continuo,Expresiones de Tiempo,Time Expressions,27
+28,Futuro simple,Voz Activa y Pasiva,Active Voice,28
+29,Futuro simple,Voz Activa y Pasiva,Passive Voice,29
+30,Futuro simple,Modales y Verbos,Modal Verbs,30
+31,Futuro simple,Modales y Verbos,Verb Patterns,31
+32,Futuro simple,Modales y Verbos,Phrasal Verbs,32
+33,Futuro simple,Expresiones de Tiempo,Time Expressions,33
+34,Futuro simple,Comparativos y Superlativos,Comparatives and Superlatives,34
+35,Futuro Continuo,Voz Activa y Pasiva,Active Voice,35
+36,Futuro Continuo,Voz Activa y Pasiva,Passive Voice,36
+37,Futuro Continuo,Expresiones de Tiempo,Time Expressions,37
+38,Futuro perfecto,Voz Activa y Pasiva,Active Voice,38
+39,Futuro perfecto,Voz Activa y Pasiva,Passive Voice,39
+40,Futuro perfecto,Expresiones de Tiempo,Time Expressions,40
+41,Futuro perfecto Continuo,Expresiones de Tiempo,Time Expressions,41
+42,Presente Simple,Condicional,Zero Conditional,42
+43,Presente Simple,Condicional,First Conditional,43
+44,Presente Simple,Condicional,Second Conditional,44
+45,Presente Simple,Condicional,Third Conditional,45
+46,Presente Simple,Condicional,Mixed Conditional,46
+47,Presente Simple,Cláusulas,Subjunctive Mood,47
+48,Presente Simple,Cláusulas,Sequence of Tenses,48
+49,Presente Simple,Cláusulas,Tenses in Conditional Clauses,49
+50,Presente Simple,Cláusulas,Clauses,50
+51,Presente Simple,Cláusulas,Tenses in Relative Clauses,51
+52,Presente Simple,Idiomas y Preposiciones,Idiomatic Expressions,52
+53,Presente Simple,Idiomas y Preposiciones,"Prepositions of Time, Place, Direction",53
+54,Presente Simple,Idiomas y Preposiciones,Phrasal Verbs,54
+55,Presente Simple,Idiomas y Preposiciones,"Prepositions of Cause, Purpose, Instrument",55
+56,Presente Simple,Idiomas y Preposiciones,Prepositions in Comparisons,56
+57,Presente Continuo,Condicional,Zero Conditional,57
+58,Presente Continuo,Condicional,First Conditional,58
+59,Presente Continuo,Condicional,Second Conditional,59
+60,Presente Continuo,Condicional,Third Conditional,60
+61,Presente Continuo,Condicional,Mixed Conditional,61
+62,Presente Continuo,Cláusulas,Subjunctive Mood,62
+63,Presente Continuo,Cláusulas,Sequence of Tenses,63
+64,Presente Continuo,Cláusulas,Tenses in Conditional Clauses,64
+65,Presente Continuo,Cláusulas,Clauses,65
+66,Presente Continuo,Cláusulas,Tenses in Relative Clauses,66
+67,Presente Continuo,Idiomas y Preposiciones,Idiomatic Expressions,67
+68,Presente Continuo,Idiomas y Preposiciones,"Prepositions of Time, Place, Direction",68
+69,Presente Continuo,Idiomas y Preposiciones,Phrasal Verbs,69
+70,Presente Continuo,Idiomas y Preposiciones,"Prepositions of Cause, Purpose, Instrument",70
+71,Presente Continuo,Idiomas y Preposiciones,Prepositions in Comparisons,71
+72,Presente Perfecto,Condicional,Zero Conditional,72
+73,Presente Perfecto,Condicional,First Conditional,73
+74,Presente Perfecto,Condicional,Second Conditional,74
+75,Presente Perfecto,Condicional,Third Conditional,75
+76,Presente Perfecto,Condicional,Mixed Conditional,76
+77,Presente Continuo,Reported Speech,Declaraciones,77
+78,Presente Continuo,Reported Speech,Preguntas,78
+79,Presente Continuo,Reported Speech,Órdenes y Solicitudes,79
+80,Presente Continuo,Reported Speech,Modal Verbs,80
+81,Presente Perfecto,Cláusulas,Subjunctive Mood,81
+82,Presente Perfecto,Cláusulas,Sequence of Tenses,82
+83,Presente Perfecto,Cláusulas,Tenses in Conditional Clauses,83
+84,Presente Perfecto,Cláusulas,Clauses,84
+85,Presente Perfecto,Cláusulas,Tenses in Relative Clauses,85
+86,Presente Perfecto,Idiomas y Preposiciones,Idiomatic Expressions,86
+87,Presente Perfecto,Idiomas y Preposiciones,"Prepositions of Time, Place, Direction",87
+88,Presente Perfecto,Idiomas y Preposiciones,Phrasal Verbs,88
+89,Presente Perfecto,Idiomas y Preposiciones,"Prepositions of Cause, Purpose, Instrument",89
+90,Presente Perfecto,Idiomas y Preposiciones,Prepositions in Comparisons,90
+91,Presente Perfecto Continuo,Cláusulas,Subjunctive Mood,91
+92,Presente Perfecto Continuo,Cláusulas,Sequence of Tenses,92
+93,Presente Perfecto Continuo,Cláusulas,Tenses in Conditional Clauses,93
+94,Presente Perfecto Continuo,Cláusulas,Clauses,94
+95,Presente Perfecto Continuo,Cláusulas,Tenses in Relative Clauses,95
+96,Pasado Simple,Condicional,Zero Conditional,96
+97,Pasado Simple,Condicional,First Conditional,97
+98,Pasado Simple,Condicional,Second Conditional,98
+99,Pasado Simple,Condicional,Third Conditional,99
+100,Pasado Simple,Condicional,Mixed Conditional,100
+101,Pasado Simple,Cláusulas,Subjunctive Mood,101
+102,Pasado Simple,Cláusulas,Sequence of Tenses,102
+103,Pasado Simple,Cláusulas,Tenses in Conditional Clauses,103
+104,Pasado Simple,Cláusulas,Clauses,104
+105,Pasado Simple,Cláusulas,Tenses in Relative Clauses,105
+106,Pasado Simple,Idiomas y Preposiciones,Idiomatic Expressions,106
+107,Pasado Simple,Idiomas y Preposiciones,"Prepositions of Time, Place, Direction",107
+108,Pasado Simple,Idiomas y Preposiciones,Phrasal Verbs,108
+109,Pasado Simple,Idiomas y Preposiciones,"Prepositions of Cause, Purpose, Instrument",109
+110,Pasado Simple,Idiomas y Preposiciones,Prepositions in Comparisons,110
+111,Pasado Continuo,Cláusulas,Subjunctive Mood,111
+112,Pasado Continuo,Cláusulas,Sequence of Tenses,112
+113,Pasado Continuo,Cláusulas,Tenses in Conditional Clauses,113
+114,Pasado Continuo,Cláusulas,Clauses,114
+115,Pasado Continuo,Cláusulas,Tenses in Relative Clauses,115
+116,Pasado Continuo,Idiomas y Preposiciones,Idiomatic Expressions,116
+117,Pasado Continuo,Idiomas y Preposiciones,"Prepositions of Time, Place, Direction",117
+118,Pasado Continuo,Idiomas y Preposiciones,Phrasal Verbs,118
+119,Pasado Continuo,Idiomas y Preposiciones,"Prepositions of Cause, Purpose, Instrument",119
+120,Pasado Continuo,Idiomas y Preposiciones,Prepositions in Comparisons,120
+121,Pasado Perfecto,Condicional,Zero Conditional,121
+122,Pasado Perfecto,Condicional,First Conditional,122
+123,Pasado Perfecto,Condicional,Second Conditional,123
+124,Pasado Perfecto,Condicional,Third Conditional,124
+125,Pasado Perfecto,Condicional,Mixed Conditional,125
+126,Pasado Perfecto,Cláusulas,Subjunctive Mood,126
+127,Pasado Perfecto,Cláusulas,Sequence of Tenses,127
+128,Pasado Perfecto,Cláusulas,Tenses in Conditional Clauses,128
+129,Pasado Perfecto,Cláusulas,Clauses,129
+130,Pasado Perfecto,Cláusulas,Tenses in Relative Clauses,130
+131,Pasado Perfecto,Idiomas y Preposiciones,Idiomatic Expressions,131
+132,Pasado Perfecto,Idiomas y Preposiciones,"Prepositions of Time, Place, Direction",132
+133,Pasado Perfecto,Idiomas y Preposiciones,Phrasal Verbs,133
+134,Pasado Perfecto,Idiomas y Preposiciones,"Prepositions of Cause, Purpose, Instrument",134
+135,Pasado Perfecto,Idiomas y Preposiciones,Prepositions in Comparisons,135
+136,Pasado Perfecto Continuo,Cláusulas,Subjunctive Mood,136
+137,Pasado Perfecto Continuo,Cláusulas,Sequence of Tenses,137
+138,Pasado Perfecto Continuo,Cláusulas,Tenses in Conditional Clauses,138
+139,Pasado Perfecto Continuo,Cláusulas,Clauses,139
+140,Pasado Perfecto Continuo,Cláusulas,Tenses in Relative Clauses,140
+141,Futuro simple,Cláusulas,Subjunctive Mood,141
+142,Futuro simple,Cláusulas,Sequence of Tenses,142
+143,Futuro simple,Cláusulas,Tenses in Conditional Clauses,143
+144,Futuro simple,Cláusulas,Clauses,144
+145,Futuro simple,Cláusulas,Tenses in Relative Clauses,145
+146,Futuro simple,Idiomas y Preposiciones,Idiomatic Expressions,146
+147,Futuro simple,Idiomas y Preposiciones,"Prepositions of Time, Place, Direction",147
+148,Futuro simple,Idiomas y Preposiciones,Phrasal Verbs,148
+149,Futuro simple,Idiomas y Preposiciones,"Prepositions of Cause, Purpose, Instrument",149
+150,Futuro simple,Idiomas y Preposiciones,Prepositions in Comparisons,150
+151,Futuro Continuo,Cláusulas,Subjunctive Mood,151
+152,Futuro Continuo,Cláusulas,Sequence of Tenses,152
+153,Futuro Continuo,Cláusulas,Tenses in Conditional Clauses,153
+154,Futuro Continuo,Cláusulas,Clauses,154
+155,Futuro Continuo,Cláusulas,Tenses in Relative Clauses,155
+156,Futuro Continuo,Idiomas y Preposiciones,Idiomatic Expressions,156
+157,Futuro Continuo,Idiomas y Preposiciones,"Prepositions of Time, Place, Direction",157
+158,Futuro Continuo,Idiomas y Preposiciones,Phrasal Verbs,158
+159,Futuro Continuo,Idiomas y Preposiciones,"Prepositions of Cause, Purpose, Instrument",159
+160,Futuro Continuo,Idiomas y Preposiciones,Prepositions in Comparisons,160
+161,Futuro perfecto,Cláusulas,Subjunctive Mood,161
+162,Futuro perfecto,Cláusulas,Sequence of Tenses,162
+163,Futuro perfecto,Cláusulas,Tenses in Conditional Clauses,163
+164,Futuro perfecto,Cláusulas,Clauses,164
+165,Futuro perfecto,Cláusulas,Tenses in Relative Clauses,165
+166,Futuro perfecto,Estructuras Avanzadas,Passive Reporting Structures,166
+167,Futuro perfecto,Idiomas y Preposiciones,Idiomatic Expressions,167
+168,Futuro perfecto,Idiomas y Preposiciones,"Prepositions of Time, Place, Direction",168
+169,Futuro perfecto,Idiomas y Preposiciones,Phrasal Verbs,169
+170,Futuro perfecto,Idiomas y Preposiciones,"Prepositions of Cause, Purpose, Instrument",170
+171,Futuro perfecto,Idiomas y Preposiciones,Prepositions in Comparisons,171
+172,Presente Simple,Reported Speech,Declaraciones,172
+173,Presente Simple,Reported Speech,Preguntas,173
+174,Presente Simple,Reported Speech,Órdenes y Solicitudes,174
+175,Presente Simple,Reported Speech,Modal Verbs,175
+176,Presente Perfecto,Estructuras Avanzadas,Hypothetical Structures,176
+177,Presente Perfecto,Estructuras Avanzadas,Inversions,177
+178,Presente Perfecto,Estructuras Avanzadas,Ellipsis and Substitutions,178
+179,Presente Perfecto,Estructuras Avanzadas,Passive Reporting Structures,179
+180,Presente Perfecto,Reported Speech,Declaraciones,180
+181,Presente Perfecto,Reported Speech,Preguntas,181
+182,Presente Perfecto,Reported Speech,Órdenes y Solicitudes,182
+183,Presente Perfecto,Reported Speech,Modal Verbs,183
+184,Pasado Simple,Estructuras Avanzadas,Hypothetical Structures,184
+185,Pasado Simple,Estructuras Avanzadas,Inversions,185
+186,Pasado Simple,Estructuras Avanzadas,Ellipsis and Substitutions,186
+187,Pasado Simple,Estructuras Avanzadas,Passive Reporting Structures,187
+188,Pasado Simple,Reported Speech,Declaraciones,188
+189,Pasado Simple,Reported Speech,Preguntas,189
+190,Pasado Simple,Reported Speech,Órdenes y Solicitudes,190
+191,Pasado Simple,Reported Speech,Modal Verbs,191
+192,Pasado Continuo,Reported Speech,Declaraciones,192
+193,Pasado Continuo,Reported Speech,Preguntas,193
+194,Pasado Continuo,Reported Speech,Órdenes y Solicitudes,194
+195,Pasado Continuo,Reported Speech,Modal Verbs,195
+196,Pasado Perfecto,Estructuras Avanzadas,Hypothetical Structures,196
+197,Pasado Perfecto,Estructuras Avanzadas,Inversions,197
+198,Pasado Perfecto,Estructuras Avanzadas,Ellipsis and Substitutions,198
+199,Pasado Perfecto,Estructuras Avanzadas,Passive Reporting Structures,199
+200,Pasado Perfecto,Reported Speech,Declaraciones,200
+201,Pasado Perfecto,Reported Speech,Preguntas,201
+202,Pasado Perfecto,Reported Speech,Órdenes y Solicitudes,202
+203,Pasado Perfecto,Reported Speech,Modal Verbs,203
+204,Pasado Perfecto Continuo,Estructuras Avanzadas,Hypothetical Structures,204
+205,Futuro simple,Reported Speech,Declaraciones,205
+206,Futuro simple,Reported Speech,Preguntas,206
+207,Futuro simple,Reported Speech,Órdenes y Solicitudes,207
+208,Futuro simple,Reported Speech,Modal Verbs,208
+209,Futuro Continuo,Reported Speech,Declaraciones,209
+210,Futuro Continuo,Reported Speech,Preguntas,210
+211,Futuro Continuo,Reported Speech,Órdenes y Solicitudes,211
+212,Futuro Continuo,Reported Speech,Modal Verbs,212
+213,Futuro perfecto,Estructuras Avanzadas,Hypothetical Structures,213
+214,Futuro perfecto,Estructuras Avanzadas,Inversions,214
+215,Futuro perfecto,Estructuras Avanzadas,Ellipsis and Substitutions,215
+216,Futuro perfecto,Reported Speech,Declaraciones,216
+217,Futuro perfecto,Reported Speech,Preguntas,217
+218,Futuro perfecto,Reported Speech,Órdenes y Solicitudes,218
+219,Futuro perfecto,Reported Speech,Modal Verbs,219

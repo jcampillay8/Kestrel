@@ -43,8 +43,8 @@
       <v-btn
         text
         class="d-none d-md-flex"
-        :class="{ 'selected-link': isActive('/dashboard/skill-practice') }"
-        @click="navigateTo('/dashboard/skill-practice')"
+        :class="{ 'selected-link': isSkillPracticeActive() }"
+        @click="navigateTo('/skill-practice')"
       >
         {{ $t('menu_home.Skill Practice') }}
       </v-btn>
@@ -124,11 +124,11 @@
         <v-list-item @click="navigateTo('/dashboard')">
           <v-list-item-title :class="{ 'selected-link': isActive('/dashboard') }">{{ $t('menu_home.Home') }}</v-list-item-title>
         </v-list-item>
-        <v-list-item @click="navigateTo('/dashboard/skill-practice')">
-          <v-list-item-title :class="{ 'selected-link': isActive('/dashboard/skill-practice') }">{{ $t('menu_home.Skill Practice') }}</v-list-item-title>
+        <v-list-item @click="navigateTo('/skill-practice')">
+          <v-list-item-title :class="{ 'selected-link': isSkillPracticeActive() }">{{ $t('menu_home.Skill Practice') }}</v-list-item-title>
         </v-list-item>
         <v-list-item @click="navigateTo('/skill-builder')">
-          <v-list-item-title :class="{ 'selected-link': isSkillBuilderActive() }" @click="navigateTo('/skill-builder')">{{ $t('menu_home.Skill Builder') }}</v-list-item-title>
+          <v-list-item-title :class="{ 'selected-link': isSkillBuilderActive() }">{{ $t('menu_home.Skill Builder') }}</v-list-item-title>
         </v-list-item>
         <v-list-item @click="navigateTo('/dashboard/progress-tracking')">
           <v-list-item-title :class="{ 'selected-link': isActive('/dashboard/progress-tracking') }">{{ $t('menu_home.Progress Tracking') }}</v-list-item-title>
@@ -170,7 +170,7 @@
 
 <script setup lang="ts">
 import { useUserStore } from '@/stores/useUserStore';
-import { ref, watchEffect, computed } from 'vue';
+import { ref, watchEffect } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
 
@@ -203,8 +203,11 @@ function navigateTo(route: string) {
 }
 
 function isSkillBuilderActive() {
-  // Verifica si la ruta actual incluye "/dashboard/skill-builder"
   return router.currentRoute.value.path.startsWith('/skill-builder');
+}
+
+function isSkillPracticeActive() {
+  return router.currentRoute.value.path.startsWith('/skill-practice');
 }
 
 function isActive(route: string) {
@@ -270,7 +273,6 @@ function toggleTheme() {
 
 /* Ajuste de la barra inferior cuando la superior desaparece */
 .v-app-bar-adjust {
-  /* margin-top: -32px; Mueve hacia arriba para ocupar el espacio de la barra superior */
   transition: margin-top 0.3s ease;
 }
 </style>

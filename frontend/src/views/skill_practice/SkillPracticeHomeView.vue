@@ -1,63 +1,83 @@
 <template>
-  <div class="skill-practice-home">
-    <h1>Welcome to Skill Practice</h1>
-    <p>This is the home view where you can practice your skills.</p>
-    
-    <div v-if="loading">
-      <p>Loading skills...</p>
-    </div>
+  <v-row justify="center">
+    <v-col cols="12" offset-md="1" md="10">
+      <h1>{{ $t('skill_practice.Skill_Practice_Home') }}</h1>
+      <p>{{ $t('skill_practice.Skill_Practice_Description') }}</p>
+    </v-col>
+  </v-row>
 
-    <div v-else>
-      <ul>
-        <li v-for="skill in skills" :key="skill.id">
-          {{ skill.name }} - Level: {{ skill.level }}
-        </li>
-      </ul>
-    </div>
-  </div>
+  <v-row justify="center">
+    <!-- Tarjeta de crear nuevas habilidades -->
+    <v-col cols="12" md="3">
+      <v-card>
+        <v-card-title>{{ $t('skill_practice.Skill_Practice_01') }}</v-card-title>
+        <v-card-text class="d-flex justify-center">
+          <v-img src="../src/assets/img/girl_cat_study.png" alt="Girl studying with cat" max-width="150" max-height="150" class="mb-3"></v-img>
+        </v-card-text>
+        <v-card-text>
+          <p>{{ $t('skill_practice.Create_New_Skill_Description') }}</p>
+          <v-btn color="primary" :to="{ path: '/skill-practice/skill_practice_01' }">
+            {{ $t('skill_practice.Go_Practice') }}
+          </v-btn>
+        </v-card-text>
+      </v-card>
+    </v-col>
+
+    <v-col cols="12" md="3">
+      <v-card>
+        <v-card-title>{{ $t('skill_practice.Skill_Practice_02') }}</v-card-title>
+        <v-card-text class="d-flex justify-center">
+          <v-img src="../src/assets/img/rocket.png" alt="Rocket" max-width="150" max-height="150" class="mb-3"></v-img>
+        </v-card-text>
+        <v-card-text>
+          <p>{{ $t('skill_practice.Create_New_Skill_Description') }}</p>
+          <v-btn color="primary" :to="{ path: '/skill-practice/skill_practice_02' }">
+            {{ $t('skill_practice.Go_Practice') }}
+          </v-btn>
+        </v-card-text>
+      </v-card>
+    </v-col>
+
+    <!-- Tarjeta de habilidades recomendadas -->
+    <v-col cols="12" md="3">
+      <v-card>
+        <v-card-title>{{ $t('skill_practice.Skill_Practice_03') }}</v-card-title>
+        <v-card-text class="d-flex justify-center">
+          <v-img src="../src/assets/img/happy_man.png" alt="Happy Man" max-width="150" max-height="150" class="mb-3"></v-img>
+        </v-card-text>
+        <v-card-text>
+          <p>{{ $t('skill_practice.Recommended_Skills_Description') }}</p>
+          <v-btn color="primary" :to="{ path: '/skill-practice/skill_practice_03' }">
+            {{ $t('skill_practice.Go_Practice') }}
+          </v-btn>
+        </v-card-text>
+      </v-card>
+    </v-col>
+  </v-row>
+
+  <!-- Segunda fila con la cuarta tarjeta -->
+  <v-row justify="center" class="mt-5">
+    <v-col cols="12" md="3">
+      <v-card>
+        <v-card-title>{{ $t('skill_practice.Skill_Practice_04') }}</v-card-title>
+        <v-card-text class="d-flex justify-center">
+          <v-img src="../src/assets/img/skill_04.png" alt="Skill Practice 4" max-width="150" max-height="150" class="mb-3"></v-img>
+        </v-card-text>
+        <v-card-text>
+          <p>{{ $t('skill_practice.New_Challenge_Description') }}</p>
+          <v-btn color="primary" :to="{ path: '/skill-practice/skill_practice_04' }">
+            {{ $t('skill_practice.Go_Practice') }}
+          </v-btn>
+        </v-card-text>
+      </v-card>
+    </v-col>
+  </v-row>
 </template>
 
-<script>
-import axios from 'axios';
-
-export default {
-  name: 'SkillPracticeHomeView',
-  data() {
-    return {
-      skills: [],
-      loading: true
-    };
-  },
-  created() {
-    this.fetchSkills();
-  },
-  methods: {
-    async fetchSkills() {
-      try {
-        const response = await axios.get('/api/skills/');
-        this.skills = response.data;
-      } catch (error) {
-        console.error('Error fetching skills:', error);
-      } finally {
-        this.loading = false;
-      }
-    }
-  }
-};
+<script setup lang="ts">
+// Aquí puedes importar cualquier componente o funcionalidad adicional que necesites
 </script>
 
 <style scoped>
-.skill-practice-home {
-  padding: 20px;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  padding: 10px 0;
-  border-bottom: 1px solid #ccc;
-}
+/* Añade estilos personalizados para esta vista si lo necesitas */
 </style>

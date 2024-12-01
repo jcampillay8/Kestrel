@@ -92,6 +92,7 @@
       "Continue": "Continue",
       "Resubmit": "Resubmit",
       "Setence": "Setence",
+      "Save_Sentences": "Save Setences",
       "errors": {
         "fill_required_fields": "Please enter all required fields",
         "misspelled_words": "Misspelled words: {words}",
@@ -104,10 +105,12 @@
     },
   
     "skill_practice": {
-      "Skill_Practice_Home": "Skill Practice",
+      "Skill_Practice_Home": "Skill Practice Home",
       "Skill_Practice_Description": "Practice and master your skills through interactive exercises.",
-      "Loading_Skills": "Loading skills...",
-      "No_Skills_Found": "No skills found. Try creating a new one."
+      "Skill_Practice_01": "Skill Practice 01",
+      "Skill_Practice_02": "Skill Practice 02",
+      "Skill_Practice_03": "Skill Practice 03",
+      "Go_Practice": "Go Practice"
     }
   }
   

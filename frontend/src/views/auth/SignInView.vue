@@ -79,7 +79,7 @@ const handleSubmit = async () => {
   }
 
   // Sign in the user
-  const signIn: AxiosResponse<ApiResponse<UserSocial>> = authRequest('api/auth/sign-in', state)
+  const signIn: AxiosResponse<ApiResponse<UserSocial>> = authRequest('api/auth/sign-in/', state)
 
   // Process the promise response
   signIn
